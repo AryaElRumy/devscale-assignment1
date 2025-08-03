@@ -14,12 +14,12 @@ app = FastAPI(
 app.include_router(students_router)
 
 
-@app.get("/")
+@app.get("/", tags=["Default"])
 def hello():
     return {"Mochamad Arya El Rumy - Assignment 1"}
 
 
-@app.get("/health")
+@app.get("/health", tags=["Default"])
 async def health_check():
     return {"health": "ok"}
 
