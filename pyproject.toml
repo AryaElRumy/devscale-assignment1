@@ -7,6 +7,8 @@ requires-python = ">=3.11"
 dependencies = [
     "alembic>=1.16.4",
     "fastapi[standard]>=0.116.1",
+    "isort>=6.0.1",
+    "pydantic>=2.11.7",
     "python-dotenv>=1.1.1",
     "ruff>=0.12.7",
     "scalar-fastapi>=1.2.3",
