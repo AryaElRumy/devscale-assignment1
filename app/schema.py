@@ -10,3 +10,7 @@ class RegisterStudent(BaseModel):
 class ViewStudents(BaseModel):
     name: str
     grade: int
+
+
+class UpdateStudent(RegisterStudent):
+    pass
