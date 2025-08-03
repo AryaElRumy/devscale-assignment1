@@ -54,3 +54,14 @@ def update_student(
     db.refresh(student)
 
     return student
+
+
+@students_router.post("/{student_id}")
+def unregister_student(student_id: int, db: Session = Depends(get_db_session)):
+    student = db.get(Student, student_id)
+    if not student:
+        raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail="Student not found")
+    db.delete(student)
+    db.commit()
+
+    return {"message": "Student unregistered succesfully"}
