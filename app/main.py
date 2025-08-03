@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from scalar_fastapi import get_scalar_api_reference
 
+from app.routes.students import students_router
 from app.setting import settings
 
 app = FastAPI(
@@ -9,6 +10,8 @@ app = FastAPI(
     docs_url=settings.DOC_URL,
     redoc_url=settings.REDOC_URL,
 )
+
+app.include_router(students_router)
 
 
 @app.get("/")
